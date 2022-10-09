@@ -1,0 +1,243 @@
+:root{
+    --color1: rgb(219, 153, 67);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Baloo Chettan 2', cursive;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/* s */
+header{
+    width: 100vw;
+    height: 100vh;
+    background: url("images/01.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+header::before{
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    display: block;
+    background: rgba(0, 0, 0, 0.5);
+}
+header input{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
+    position: fixed;
+    transition: ease-in(0.5);
+}
+.menu-icon{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    opacity: 1;
+    z-index: 1;
+    cursor: pointer;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu-line{
+    height: 4px;
+    width: 100%;
+    background: var(--color1);
+}
+.menu-line::before{
+    height: 4px;
+    width: 100%;
+    background: var(--color1);
+    position: absolute;
+    top: 5px;
+    display: block;
+    content: "";
+}
+.menu-line::after{
+    height: 4px;
+    width: 100%;
+    background: var(--color1);
+    position: absolute;
+    top: 43px;
+    display: block;
+    content: "";
+}
+header input:checked ~ .menu-icon .menu-line::before{
+    transform: rotate(90deg);
+    top: 0;
+}
+header input:checked ~ .menu-icon .menu-line::after{
+    transform: rotate(90deg);
+    top: 0;
+}
+header input:checked ~ .menu-icon .menu-line{
+    transform: rotate(135deg);
+    transition: 0.3s;
+}
+header input:checked ~ .menu-item{
+    right: 0;
+}
+.menu-item{
+    position: fixed;
+    width: 300px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    top: 0;
+    right: -100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    z-index: 10;
+    flex-direction: column;
+    transition: 0.5s;
+}
+.menu-item li{
+    line-height: 40px;
+}
+.menu-item li a{
+    color: var(--color1);
+}
+.menu-item li a:hover{
+    color:red
+}
+.header-text{
+    position: absolute;
+}
+.header-text h1{
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: var(--color1);
+}
+.header-text a{
+    padding: 15px 40px;
+    background: var(--color1);
+    color: black;
+    border-radius: 50px;
+    font-size: 25px;
+    opacity: 0.3;
+    animation: headerAnimation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    transition: 0.3s;
+}
+@keyframes headerAnimation{
+    0%{
+        opacity: 0.4;
+    }
+    50%{
+        opacity: 1;
+        
+    }
+    100%{
+        opacity: 0.4;
+    }
+}
+.header-text a:hover{
+    background: none;
+    border: 2px solid var(--color1);
+    
+}
+/*  */
+.categories h1{
+    text-align: center;
+    padding: 50px 0;
+    color: var(--color1);
+    font-size: 40px;
+    
+    
+  
+    
+}
+.categories .categories-item .categories-item-icon img{
+    width: 100px;
+    transition: all .3s ease;
+}
+.categories .categories-item .categories-item-icon img:hover{
+    transform: scale(1.3);
+}
+.categories .categories-item ul{
+    
+    text-align: center;
+    cursor: pointer;
+}
+.categories .categories-item ul li{
+    display: inline-block;
+    line-height: 40px;
+    padding: 0 20px 30px;
+}
+.experience .ex-img{
+    text-align: center;
+   
+}
+.experience .ex-img img{
+    margin: 0 30px 30px;
+    border: 3px solid var(--color1);
+    transition: all .3s ease;
+    
+}
+.experience .ex-img img:hover{
+    transform: scale(1.3);
+}
+.bestSeller .bestSeller-img{
+    text-align: center;
+    flex-basis: 25%;
+}
+.contact .contact-img{
+    text-align: center;
+    
+}
+.contact .contact-img img{
+    width: 40px;
+    margin: 20px 15px;
+    animation: contactAnimation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    transition:all 0.3s ease;
+}
+.contact .contact-img img:hover{
+    transform: scale(1.3);
+}
+@keyframes contactAnimation{
+    0%{
+        opacity: 0.4;
+    }
+    50%{
+        opacity: 1;
+        
+    }
+    100%{
+        opacity: 0.4;
+    }
+}
+.contact p{
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+}
+@media screen {
+    
+}
+
